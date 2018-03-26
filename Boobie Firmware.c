@@ -9,6 +9,7 @@
 #use delay(clock=20MHz, crystal=20MHz) 
 #use rs232(baud=57600, parity=N, xmit=PIN_C4, rcv=PIN_C5, bits=8, STOP=1)
 
+#define version 1
 #define USER_PINS 12
 #define ms20Start 100
 
@@ -260,6 +261,8 @@ void main()
    enable_interrupts(INT_RDA);
    enable_interrupts(GLOBAL);
 
+   printf("Boobie Servo v%d\r\n", version);
+
    while (TRUE)
    {
       if (dutytarget != 0)
@@ -277,7 +280,7 @@ void main()
             funcounter = 0;
             for (funloop=0; funloop<5; funloop++)
             {
-               for (counter=6; counter<12; counter++)
+               for (counter=5; counter<12; counter++)
                {
                   
                   set_duties[counter] = funcounter;

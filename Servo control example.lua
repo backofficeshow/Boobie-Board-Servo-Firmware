@@ -6,7 +6,7 @@ www.backofficeshow.com
 
 ]]
 
-local comport = 6
+local comport = 6 --CHANGE THIS TO YOUR DEVICE MANAGER BOOBIE ADDRESS!
 local servomin = 0
 local servomax = 20
 
@@ -26,11 +26,11 @@ end
 os.execute("echo t > COM" .. comport)
 
 --Lets run the through their extents
-for i=6,11 do
+for i=5,11 do
 	moveservo(i,servomin)
 end
 
-for i=6,11 do
+for i=5,11 do
 	moveservo(i,servomax)
 end
 
