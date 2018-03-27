@@ -241,7 +241,7 @@ void SerialInt()
          buf[0]=incharacter[2];
          buf[1]=incharacter[3];
          val = atoi(buf);
-         set_duties[pin]=val;
+         set_duties[pin-4]=val;
       }
    }
    else
@@ -261,7 +261,7 @@ void main()
    enable_interrupts(INT_RDA);
    enable_interrupts(GLOBAL);
 
-   printf("Boobie Servo v%d\r\n", version);
+   printf("\r\nBoobie Servo v%d\r\nAndrew Armstrong @backofficeshow\r\n", version);
 
    while (TRUE)
    {
